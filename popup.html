@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { width: 250px; padding: 15px; font-family: sans-serif; text-align: center; }
+    button { 
+      width: 100%; padding: 10px; margin-top: 10px; 
+      background: #E60023; color: white; border: none; 
+      border-radius: 5px; cursor: pointer; font-weight: bold;
+    }
+    button.copy { background: #0ACF83; }
+    button:hover { opacity: 0.9; }
+    #status { margin-top: 10px; font-size: 12px; color: #555; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h3>Pin Grabber</h3>
+  <p style="font-size: 12px;">Scroll to the bottom of the board first!</p>
+  <button id="downloadBtn">Download as ZIP</button>
+  <button id="copyBtn" class="copy">Copy Image URLs</button>
+  <div id="status"></div>
+  
+  <script src="jszip.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
