@@ -1,20 +1,27 @@
 {
   "manifest_version": 3,
-  "name": "Pinterest to Figma Grabber",
+  "name": "Pinterest Pin Grabber",
   "version": "1.0",
-  "description": "Extracts high-res images from Pinterest boards for downloading or copying.",
-  "permissions": ["activeTab", "downloads"],
-  "host_permissions": [
-    "*://*.pinterest.com/*",
-    "*://*.pinimg.com/*"
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "downloads",
+    "cookies"
   ],
-  "content_scripts": [
-    {
-      "matches": ["*://*.pinterest.com/*"],
-      "js": ["content.js"]
-    }
+  "host_permissions": [
+    "https://www.pinterest.com/*",
+    "https://i.pinimg.com/*"
   ],
   "action": {
     "default_popup": "popup.html"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.pinterest.com/*"],
+      "js": ["content.js"]
+    }
+  ]
 }
